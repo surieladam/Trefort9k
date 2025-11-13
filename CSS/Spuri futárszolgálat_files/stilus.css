@@ -1,0 +1,41 @@
+body {
+    /* az oldal középre igazítása */
+    margin: auto;
+    width: 70%;
+    background-color: darkgray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+ul {
+    width: 60%;
+    background-color: white;
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+}
+h2 {
+    color:blue
+}
+table {
+    width: 80%;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+}
+caption {
+    color: darkblue;
+}
+th {
+    background-color: lightblue;
+}
+td tr {
+    border: 1px,solid blue; 
+}
+h3 {
+    color: teal;
+}

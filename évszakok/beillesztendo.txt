@@ -1,0 +1,21 @@
+ stílusleírás: 
+ <style>
+        img{
+            float: right;
+            width: 75%;
+        }
+        th+td{
+            width: 400px;
+        }
+        th h2{
+            text-align: center;
+            width: 200px;
+            
+        }
+        p{
+            margin-top: 100px;
+        }
+</style>
+
+Forrás url: 
+ https://gardenista.hu/2017/12/05/a-evszakok-csodas-valtozasai-het-kepben/

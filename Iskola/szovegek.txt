@@ -1,0 +1,16 @@
+
+Gigabyte B550 GAMING X alaplap
+
+Processzor foglalat Socket AM4
+Alaplap méret ATX
+Chip készlet AMD B550 
+Memória típusa DDR4
+Memória architektúra Dual Channel
+Memória foglalat száma 4 db
+
+Háttértár csatlakozó M.2 2 db
+
+Bővítőhelyek PCIe 4.0 x16 2 db
+Bővítőhelyek PCIe 3.0 x1 3 db
+USB 3.2 Gen 2 (USB 3.1 Gen2) 1 db
+USB 3.2 Gen 1 (USB 3.1 Gen1) 3 db
