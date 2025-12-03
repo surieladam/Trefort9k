@@ -1,0 +1,20 @@
+Típus
+Hétfő
+Kedd
+Szerda
+Csütörtök
+Péntek
+
+Leves
+Paradicsomleves bazsalikommal
+Zöldborsó krémleves
+Csontleves zöldségekkel
+Gulyásleves
+Zöldségleves
+
+Főétel
+Rántott csirkemell, petrezselymes burgonya, savanyúság
+Töltött paprika rizzsel
+Harcsapaprikás nokedlivel
+Sült csirkecomb jázminrizzsel és párolt zöldséggel
+Lasagne, parmezánnal
