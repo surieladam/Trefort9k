@@ -1,0 +1,15 @@
+﻿1. rd le azokat a tag-eket amelyek szükségesek egy html weblap létrehozásához! (4p)
+2. Mi a feladata egy DNS szervernek? (2p)
+3. Írd le, hogy a következő tag-eknek mi a funkciója (2p):
+   * <title>
+   * <head>
+4. Írd le, hogy melyik tag látja el ezt a feladatot (2p):
+   * karakterkódolás beállítása
+
+
+Értékelés:
+* 5        9 - 10p
+* 4        8 - 7p
+* 3        6 - 5p
+* 2        4 - 3p
+* 1        2 - 0p

@@ -1,0 +1,15 @@
+﻿1. Melyik attribútummal lehet formázni szöveget, mi ennek a formátuma? Írj egy példát formázásra! (4p)
+2. Hogyan lehet egy honlapnál megadni, hogy az milyen nyelven van? (2p)
+3. Add meg a funkciókhoz tartozó tageket (3p):
+   * Címsor típus (írj 2 különböző szintet, pl. cím és alcím)
+   * Félkövér stílus
+   * Bekezdés létrehozása
+4. Írd le milyen tag-ek tartoznak a listákhoz és mi a funkciójuk! (3p)
+
+
+Értékelés:
+* 5        11 - 12p
+* 4        9 - 10p
+* 3        7 - 8p
+* 2        6p
+* 1        5 - 0p

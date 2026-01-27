@@ -1,0 +1,51 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: orange;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px ;
+    text-align: left;
+}
+
+.classattributum {
+    background-color: lightblue;
+}
+
+.fontos {
+    background-color: lightgreen;
+}
+
+#bevezeto {
+    background-color: lightblue;
+}
+
+#tartalom {
+    background-color: lightgreen;
+}
+
+#figyelem {
+    background-color: lightcoral;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+p {
+    margin: 10px 0;
+}

@@ -1,0 +1,14 @@
+﻿1. Írj le egy mintát, hogyan nézhet ki egy többszintű lista HTML-ben, az egyik szint legyen rendezett, a másik rendezetlen! (4p)
+2. Hogyan lehet képet megjeleníteni HTML-ben (mi a parancs)? Milyen két módon adható meg a kép? (4p)
+3. Add meg a funkciókhoz tartozó tageket (2p):
+   * bekezdés létrehozása
+   * lap címének megadása (böngészőben fenn)
+4. Írd le a nevedet úgy HTML-ben, hogy félkövér és dőlt is legyen! (4p)
+
+
+Értékelés:
+* 5        13 - 14p
+* 4        11 - 12p
+* 3        9 - 10p
+* 2        7 - 8p
+* 1        0 - 6p
