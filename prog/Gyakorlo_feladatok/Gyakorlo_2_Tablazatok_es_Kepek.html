@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+    <html lang="hu">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Gyakorló 2 - Táblázatok és Képek</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    line-height: 1.6;
+                }
+                h1 { color: #2c3e50; }
+                h2 { color: #34495e; margin-top: 30px; }
+                .feladat { 
+                    background-color: #ecf0f1; 
+                    padding: 15px; 
+                    margin: 15px 0; 
+                    border-left: 4px solid #3498db;
+                }
+                table {
+                    border-collapse: collapse;
+                    margin: 15px 0;
+                    width: 100%;
+                }
+                th, td {
+                    border: 1px solid #bdc3c7;
+                    padding: 10px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #3498db;
+                    color: white;
+                }
+                img {
+                    max-width: 300px;
+                    border: 2px solid #bdc3c7;
+                    margin: 10px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Gyakorló Feladat 2: Táblázatok és Képek</h1>
+            
+            <div class="feladat">
+                <h2>Feladat A: Alap Táblázat</h2>
+                <p>Készítsd el az alábbi táblázatot:</p>
+                <p><b>Követelmények:</b></p>
+                <ul>
+                    <li>3 oszlop: Tárgy, Jegy, Dátum</li>
+                    <li>Legalább 5 sor adat</li>
+                    <li>Header sorral (th tagok)</li>
+                    <li>border-collapse: collapse tulajdonság</li>
+                </ul>
+                <p><b>Megoldásod ide kerül:</b></p>
+                <!-- IDE DOLGOZZ -->
+                <table>
+                    <tr>
+                        <th>Tárgy</th>
+                        <th>Jegy</th>
+                        <th>Dátum</th>
+                    </tr>
+                    <tr>
+                        <td>Matematika</td>
+                        <td>5</td>
+                        <td>2026-01-19</td>
+                    </tr>
+                    <tr>
+                        <td>Magyar</td>
+                        <td>4</td>
+                        <td>2026-01-16</td>
+                    </tr>
+                    <tr>
+                        <td>Angol</td>
+                        <td>3</td>
+                        <td>2025-11-11</td>
+                    </tr>
+                    <tr>
+                        <td>Történelem</td>
+                        <td>3</td>
+                        <td>2025-11-11</td>
+                    </tr>
+                    <tr>
+                        <td>Digitális Kultúra</td>
+                        <td>4</td>
+                        <td>2026-01-12</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="feladat">
+                <h2>Feladat B: Pontlétra Táblázat (Ligatorian)</h2>
+                <p>Készítsd el egy hipotetikus labdarúgó bajnokság pontlétráját:</p>
+                <p><b>Követelmények:</b></p>
+                <ul>
+                    <li>Oszlopok: Helyezés, Csapat, Játszott, Győzelem, Döntetlen, Vereség, Pont</li>
+                    <li>Legalább 4-5 csapat</li>
+                    <li>Szegély és háttérszín formázás</li>
+                </ul>
+                <p><b>Megoldásod ide kerül:</b></p>
+                <!-- IDE DOLGOZZ -->
+                <table>                  
+                <tr>
+                        <th>Helyezés</th>
+                        <th>Csapat</th>
+                        <th>Játszott</th>
+                        <th>Győzelem</th>
+                        <th>Döntetlen</th>
+                        <th>Vereség</th>
+                        <th>Pont</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Warhammer United</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Chaos FC</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Eldar Eagles</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Tyranid Titans</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>14</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="feladat">
+                <h2>Feladat C: Kép Beágyazása (img tag)</h2>
+                <p>Készítsd el a gyakorlófeladat-hoz szükséges képeket:</p>
+                <p><b>Követelmények:</b></p>
+                <ul>
+                    <li>Keress vagy készítsen egy képet (pl. a warhammer/images mappából)</li>
+                    <li>Alt szöveggel rendelkezzék</li>
+                    <li>Maximum 300px szélességű legyen</li>
+                    <li>A kép alatt legyen egy képaláírás (p tag-ban)</li>
+                </ul>
+                <p><b>Megoldásod ide kerül:</b></p>
+                <!-- IDE DOLGOZZ -->
+                <img src="warhammer-40k-chaos-gate-daemonhunters-review_97fa.jpg" alt="Warhammer 40k Primaris Intercessors">
+                <p>Warhammer 40k Primaris Intercessors</p>
+            </div>
+            <div class="feladat">
+                <h2>Feladat D: Komplex Táblázat</h2>
+                <p>Készítsd el az alábbi étrendet táblázatban:</p>
+                <p><b>Követelmények:</b></p>
+                <ul>
+                    <li>Oszlopok: Nap, Reggeli, Ebéd, Vacsora</li>
+                    <li>Hétfőtől vasárnapig</li>
+                    <li>Szegélyek és szín megkülönböztetés</li>
+                    <li>Header és adatsorok eltérő formázása</li>
+                </ul>
+                <p><b>Megoldásod ide kerül:</b></p>
+                <!-- IDE DOLGOZZ -->
+                <table>
+                    <tr>
+                        <th>Nap</th>
+                        <th>Reggeli</th>
+                        <th>Ebéd</th>
+                        <th>Vacsora</th>
+                    </tr>
+                    <tr>
+                        <td>Hétfő</td>
+                        <td>Zabkása</td>
+                        <td>Csirke saláta</td>
+                        <td>Grillezett hal</td>
+                    </tr>
+                    <tr>
+                        <td>Kedd</td>
+                        <td>Melegszendvics</td>
+                        <td>Marhahús leves</td>
+                        <td>Zöldséges tészta</td>
+                    </tr>
+                    <tr>
+                        <td>Szerda</td>
+                        <td>Sajtos pizzaszelet</td>
+                        <td>Töltött krumpli</td>
+                        <td>Sült csirke</td>
+                    </tr>
+                    <tr>
+                        <td>Csütörtök</td>
+                        <td>Csoki golyó tejjel</td>
+                        <td>Lencsefőzelék</td>
+                        <td>Finom Bableves</td>
+                    </tr>
+                    <tr>
+                        <td>Péntek</td>
+                        <td>Tojásrántotta</td>
+                        <td>Halászlé</td>
+                        <td>Simon's Burger, Hamburger</td>
+                    </tr>
+                    <tr>
+                        <td>Szombat</td>
+                        <td>Humusz</td>
+                        <td>Marha pörkölt</td>
+                        <td>Tonhalas saláta</td>
+                    </tr>
+                    <tr>
+                        <td>Vasárnap</td>
+                        <td>Omlett zöldségekkel</td>
+                        <td>Sült pulyka</td>
+                        <td>Leves és szendvics</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <p><b>Tipp:</b> Az img tag src attribútumát elég URL-ből linkelni, vagy a warhammer/images mappból választani!</p>
+            <p><b>Önellenőrzés:</b> Ellenőrizd, hogy minden <b>th</b> és <b>td</b> tag helyesen nyitott-zárt-e!</p>
+        </body>
+</html>

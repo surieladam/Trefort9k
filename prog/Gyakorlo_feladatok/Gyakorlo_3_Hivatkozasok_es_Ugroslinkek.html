@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakorló 3 - Hivatkozások és Belső Ugrólinkek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #2c3e50; }
+
+        h2 { color: #34495e; margin-top: 30px; }
+
+        h3 { color: #7f8c8d; }
+
+        .feladat { 
+            background-color: #ecf0f1; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-left: 4px solid #3498db;
+        }
+        .toc {
+            background-color: #fff3cd;
+            padding: 15px;
+            border: 1px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+        #nem_tanultuk {
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gyakorló Feladat 3: Hivatkozások és Belső Ugrólinkek</h1>
+    
+    <div class="feladat">
+        <h2>Feladat A: Külső Hivatkozások (External Links)</h2>
+        <p>Készítsd el az alábbi weboldalakra mutató hivatkozásokat:</p>
+        <p><b>Követelmények:</b></p>
+        <ul>
+            <li>Google.com - nyisson új lapon (target="_blank")</li>
+            <li>Wikipedia - ugyanabban a lapon (target="_self")</li>
+            <li>MDN Web Docs - új lapon</li>
+            <li>GitHub - új lapon</li>
+            <li>Legalább 4 különböző oldal</li>
+        </ul>
+        <p><b>Megoldásod ide kerül:</b></p>
+        <!-- IDE DOLGOZZ -->
+        <ul>
+            <li><a href="https://www.google.com" target="_blank">Google</a></li>
+            <li><a href="https://www.wikipedia.org" target="_self">Wikipedia</a></li>
+            <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+        </ul>
+
+    </div>
+    <div class="feladat">
+        <h2>Feladat B: Belső Ugrólinkek (Internal Anchors)</h2>
+        <p>Készítsd el az alábbi Tartalomjegyzéket és Fejezet hivatkozásokkal:</p>
+        <p><b>Követelmények:</b></p>
+        <ul>
+            <li>Egy Tartalomjegyzék (Table of Contents) a lap tetején</li>
+            <li>Legalább 4 fejezet (h2) az oldalon</li>
+            <li>Minden fejezet egy ID attribútummal rendelkezik</li>
+            <li>A Tartalomjegyzékben szereplő linkek az ID-kra mutatnak (#)</li>
+            <li>Minden fejezet végén van egy "Vissza a tetejére" link</li>
+        </ul>
+        <p><b>Megoldásod ide kerül:</b></p>
+        <!-- IDE DOLGOZZ -->
+        <div class="toc">
+            <h3>Tartalomjegyzék</h3>
+            <ul>
+                <li><a href="#fejezet-1">1. fejezet</a></li>
+                <li><a href="#fejezet-2">2. fejezet</a></li>
+                <li><a href="#fejezet-3">3. fejezet</a></li>
+                <li><a href="#fejezet-4">4. fejezet</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="fejezet-1">1. fejezet - Warhammer Világról</h2>
+        <p>A Warhammer 40k egy futurisztikus, sci-fi tabletop játék, ahol a kegyelem és a halál között sincs különbség. Az Emberisség Birodalmának leszármazó ágai közül választhatunk különböző hadseregeket.</p>
+        <p><a href="#fejezet-1">↑ Vissza a tetejére</a></p>
+        
+        <h2 id="fejezet-2">2. fejezet - Frakciók és Hadseregek</h2>
+        <p>A Warhammer 40k-ban több féle frakció található: a Space Marines, a Chaos, az Eldar, a Necronok, a Tyranidok és sok más. Mindegyik frakció egyedi képességekkel és karakterekkel rendelkezik.</p>
+        <p><a href="#fejezet-1">↑ Vissza a tetejére</a></p>
+        
+        <h2 id="fejezet-3">3. fejezet - Katonai Felszerelés</h2>
+        <p>A különféle katonai egységek különleges fegyverzettel rendelkeznek: bolterek, plazmariflek, energiakardok és még sok egyéb támadófegyver.</p>
+        <p><a href="#fejezet-1">↑ Vissza a tetejére</a></p>
+        
+        <h2 id="fejezet-4">4. fejezet - A Háború és Stratégia</h2>
+        <p>A Warhammer 40k-ban a stratégia és a taktika alapvető fontosságú. Meg kell helyezni a seregeket, meg kell támadni az ellensséget, és meg kell védeni az alapot.</p>
+        <p><a href="#fejezet-1">↑ Vissza a tetejére</a></p>
+    <div class="feladat">
+        <h2>Feladat C: Képre Mutató Hivatkozás</h2>
+        <p>Készítsd el az alábbi hivatkozásokat képekhez:</p>
+        <p><b>Követelmények:</b></p>
+        <ul>
+            <li>Egy kép, amely kattintáskor egy másik oldalra mutat</li>
+            <li>A link a alt szöveg felhasználásával</li>
+            <li>A kép mérete legyen korlátozva (pl. 150px)</li>
+        </ul>
+        <p><b>Megoldásod ide kerül:</b></p>
+        <!-- IDE DOLGOZZ -->
+        <a href="https://www.wikipedia.org" target="_blank">
+            <img src="wikipedia.jpg" alt="Wikipedia logó" style="width: 150px;">
+        </a>
+    </div>
+    <div class="feladat">
+        <h2>Feladat D: E-mail és Telefonos Linkek</h2>
+        <p>Készítsd el az alábbi speciális hivatkozásokat:</p>
+        <p><b>Követelmények:</b></p>
+        <ul>
+            <li>mailto: link egy e-mail címhez</li>
+            <li>tel: link egy telefonszámhoz</li>
+            <li>Mindkettőhöz szövegjelzés</li>
+            <li>Egy olyan link, amely egy egyéb fájlra mutat (pl. PDF, ha van)</li>
+        </ul>
+        <p><b>Megoldásod ide kerül:</b></p>
+        <!-- IDE DOLGOZZ -->
+        <p><a href="mailto:surieladam@gmail.com">Írj nekünk emailt</a></p>
+        <p><a href="tel:+36305594657">Hívj fel minket</a></p>
+    </div>
+    <hr>
+    <p><b>Tipp:</b> Az ID-kat csupa kisbetűvel és kötőjellel írd (pl. #fejezet-1)!</p>
+    <p><b>Önellenőrzés:</b> Kattints minden linkre, és ellenőrizd, hogy helyesen működnek!</p>
+</body>
+</html>

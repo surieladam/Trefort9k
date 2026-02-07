@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Vizsga - Kérdés 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { color: #2c3e50; }
+        .kerdes { background-color: #ecf0f1; padding: 15px; border-radius: 5px; }
+        .valasz { background-color: #d5f4e6; padding: 15px; margin-top: 15px; border-radius: 5px; display: none; }
+        button { 
+            background-color: #3498db; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #2980b9; }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Vizsga - Kérdés 2</h1>
+        
+        <div class="kerdes">
+            <h2>Kérdés:</h2>
+            <p>Mit jelent a <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> és <code>&lt;td&gt;</code> tag, és mit kell tudnod a <code>border-collapse</code> CSS tulajdonságról?</p>
+        </div>
+        <button onclick="toggleAnswer()">Mutasd a Választ</button>
+        <div class="valasz" id="answer">
+            <h3>Válasz:</h3>
+            <ul>
+                <li><code>&lt;table&gt;</code> - A táblázat konténere</li>
+                <li><code>&lt;tr&gt;</code> - Táblázat sor (Table Row)</li>
+                <li><code>&lt;th&gt;</code> - Táblázat fejléc cella (Table Header) - félkövér és középre igazított alapértelmezettben</li>
+                <li><code>&lt;td&gt;</code> - Táblázat adat cella (Table Data) - normál szöveg</li>
+                <li><code>border-collapse: collapse;</code> - Eltávolítja a dupla szegélyeket a cellák között. Hasznos, hogy csak egy szegély legyen az egész táblázat körül.</li>
+                <li><code>border-collapse: separate;</code> - Megtartja az egyes cellák körüli szegélyeket (alapértelmezett)</li>
+            </ul>
+            <p><b>Praktikus tanács:</b> Szinte minden táblázatnál érdemes <code>border-collapse: collapse;</code> használni, hogy rendezettebb legyen a kinézet.</p>
+        </div>
+    </div>
+    <script>
+        function toggleAnswer() {
+            const answer = document.getElementById('answer');
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

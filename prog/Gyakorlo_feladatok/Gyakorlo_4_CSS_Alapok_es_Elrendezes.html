@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakorló 4 - CSS Alapok és Elrendezés</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .feladat {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .flex-example {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .flex-item {
+            flex: 1;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #229954;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gyakorló Feladat 4: CSS Alapok és Elrendezés</h1>
+    </header>
+    <nav>
+        <a href="#feladat-a">Feladat A</a>
+        <a href="#feladat-b">Feladat B</a>
+        <a href="#feladat-c">Feladat C</a>
+        <a href="#feladat-d">Feladat D</a>
+    </nav>
+    <div class="container">
+        <div class="feladat" id="feladat-a">
+            <h2>Feladat A: Szöveg- és Háttérstílusok</h2>
+            <p>Formázd meg az alábbi szövegeket CSS-el:</p>
+            <ul>
+                <li>Főcím (h1): kék szín, 32px, félkövér</li>
+                <li>Alcím (h2): szürke szín, 24px</li>
+                <li>Bekezdés (p): 16px méret, 1.6-os sorhő, sötétszürke szín</li>
+                <li>Link (a): kék szín, hover-nél aláhúzás</li>
+                <li>Lista (ul): különböző marker stílus (circle, square, etc.)</li>
+            </ul>
+            <p><b>Megoldásod ide kerül (CSS szekció):</b></p>
+            <!-- IDE DOLGOZZ -->
+            <h1 style="color: blue; font-size: 32px; font-weight: bold;">Ez egy főcím</h1>
+            <h2 style="color: gray; font-size: 24px;">Ez egy alcím</h2>
+            <p style="font-size: 16px; line-height: 1.6; color: darkgray;">Ez egy bekezdés, amely a megadott stílusokkal van formázva. Ez a szöveg 16px méretű, 1.6-os sorhővel és sötétszürke színnel jelenik meg.</p>
+            <a href="https://www.wikipedia.org" style="color: blue; text-decoration: none;">Ez egy link</a>
+            <ul style="list-style-type: circle;">
+                <li>Első elem</li>
+                <li>Második elem</li>
+                <li>Harmadik elem</li>
+            </ul>
+        </div>
+        <div class="feladat" id="feladat-b">
+            <h2>Feladat B: Box Model (Margin, Padding, Border)</h2>
+            <p>Készítsd el az alábbi dobozokat CSS-el:</p>
+            <ul>
+                <li>Egy doboz 20px padding-gel</li>
+                <li>Egy doboz 30px margin-gel</li>
+                <li>Egy doboz 2px solid border-rel</li>
+                <li>Egy doboz, amely az összes tulajdonságot kombinál</li>
+                <li>Legalább 3 különböző doboz</li>
+            </ul>
+            <p><b>Megoldásod ide kerül:</b></p>
+            <!-- IDE DOLGOZZ -->
+            <div style="padding: 20px; background-color: #3498db; color: white; margin-bottom: 20px;">Ez egy doboz 20px padding-gel</div>
+            <div style="margin: 30px; background-color: #e74c3c; color: white; padding: 10px;">Ez egy doboz 30px margin-gel</div>
+            <div style="border: 2px solid #2ecc71; padding: 10px; background-color: #2ecc71; color: white;">Ez egy doboz 2px solid border-rel</div>
+            <div style="padding: 20px; margin: 30px; border: 2px solid #9b59b6; background-color: #9b59b6; color: white;">Ez egy doboz, amely az összes tulajdonságot kombinál</div>
+        </div>
+        <div class="feladat" id="feladat-c">
+            <h2>Feladat C: Flexbox Elrendezés</h2>
+            <p>Készítsd el az alábbi elrendezéseket flexbox-szal:</p>
+            <ul>
+                <li>Három oszlop egyenlő szélességgel (flex: 1)</li>
+                <li>Egy header-main-footer elrendezés</li>
+                <li>Egy 2 oszlopos layout (sidebar + content)</li>
+                <li>Gap tulajdonság az elemek közötti távolsághoz</li>
+            </ul>
+            <p><b>Megoldásod ide kerül:</b></p>
+            <!-- IDE DOLGOZZ -->
+            <div class="flex-example">
+                <div class="flex-item">Oszlop 1</div>
+                <div class="flex-item">Oszlop 2</div>
+                <div class="flex-item">Oszlop 3</div>
+            </div>
+        </div>
+        <div class="feladat" id="feladat-d">
+            <h2>Feladat D: Komplex Landing Page</h2>
+            <p>Készítsd el az alábbi felépítésű weboldalt:</p>
+            <ul>
+                <li>Header (logo/cím, navigáció)</li>
+                <li>Hero szakasz (nagy kép, szöveg)</li>
+                <li>3 oszlopos tartalom terület</li>
+                <li>Egy "Szervizünk" szakasz táblázattal</li>
+                <li>Footer (szerzői jog, linkek)</li>
+                <li>Elég CSS-sel formázott, mobilbarát elrendezéssel</li>
+            </ul>
+            <p><b>Megoldásod ide kerül:</b></p>
+            <!-- IDE DOLGOZZ -->
+            <header>
+                <h1>Ez egy Header</h1>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+        <div class="container">
+            <h2>Üdvözlünk a Weboldalunkon!</h2>
+            <p>Ez egy hero szakasz nagy képpel és szöveggel.</p>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Programozás Gyakorló. Minden jog fenntartva.</p>
+    </footer>
+    <hr style="margin-top: 40px;">
+    <div class="container">
+        <p><b>Tippek:</b></p>
+        <ul>
+            <li>CSS-t helyezz az &lt;style&gt; tagba a &lt;head&gt;-ben</li>
+            <li>Flexbox: display: flex; gap: 10px; flex: 1;</li>
+            <li>Box Model: padding, margin, border aránya fontos</li>
+            <li>Szinek: hex (#), rgb(), vagy neve alapján</li>
+        </ul>
+        <p><b>Önellenőrzés:</b> Nyitsd meg a böngészőben és ellenőrizd az elrendezést!</p>
+    </div>
+</body>
+</html>

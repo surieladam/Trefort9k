@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: Block, Inline és Positioning - Magyarázat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        p, li {
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .demo-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+        }
+
+        /* BLOCK DISPLAY */
+        .block-example {
+            display: block;
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* INLINE DISPLAY */
+        .inline-example {
+            display: inline;
+            background: #764ba2;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+        }
+
+        /* INLINE-BLOCK */
+        .inline-block-example {
+            display: inline-block;
+            background: #20c997;
+            color: white;
+            padding: 15px 20px;
+            margin: 5px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* BOX MODEL DEMO */
+        .box-model-demo {
+            background: #ffc107;
+            padding: 20px;
+            margin: 15px 0;
+            border: 5px solid #ff6b6b;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .box-model-demo-border-box {
+            background: #28a745;
+            padding: 20px;
+            margin: 15px 0;
+            border: 5px solid #ff6b6b;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* BOX SHADOW EXAMPLES */
+        .box-shadow-simple {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .box-shadow-blur {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+            border-radius: 5px;
+        }
+
+        .box-shadow-spread {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 0 10px rgba(102, 126, 234, 0.3);
+            border-radius: 5px;
+        }
+
+        .box-shadow-inset {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        /* POSITION EXAMPLES */
+        .position-static {
+            position: static;
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .position-container {
+            position: relative;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px dashed #666;
+            border-radius: 5px;
+            min-height: 150px;
+        }
+
+        .position-relative {
+            position: relative;
+            background: #ffc107;
+            color: black;
+            padding: 15px;
+            left: 20px;
+            top: 10px;
+            width: fit-content;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .position-absolute {
+            position: absolute;
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            top: 10px;
+            right: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .position-fixed {
+            position: fixed;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .position-sticky {
+            position: sticky;
+            top: 0;
+            background: #17a2b8;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 100;
+        }
+
+        /* COMPARISON TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f0f0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #721c24;
+        }
+
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #155724;
+        }
+
+        .code-block {
+            background: #282c34;    
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+        }
+
+        .keyword {
+            color: #c678dd;
+        }
+
+        .property {
+            color: #61afef;
+        }
+
+        .value {
+            color: #98c379;
+        }
+
+        footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 2px solid #ddd;
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 CSS: Block, Inline és Positioning</h1>
+            <p>9. osztályos írásban dolgozat felkészülés</p>
+        </header>
+
+        <main>
+            <!-- BLOCK VS INLINE SECTION -->
+            <section>
+                <h2>1️⃣ Block vs Inline - Alapok</h2>
+
+                <h3>🔵 Block elemek (block)</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Teljes szélességet foglal el (100% width)</li>
+                    <li>Új sorban kezdődik</li>
+                    <li>Új sorban végződik</li>
+                    <li>Margin, padding, border, width, height - mindez módosítható</li>
+                    <li><strong>Alapértelmezett html elemek:</strong> <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1-h6&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;ul&gt;</code></li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>Vizuális demó - Block elemek:</strong></p>
+                    <div class="block-example">📦 Ez egy block elem - teljes szélességet foglal el</div>
+                    <div class="block-example">📦 Második block elem - új sorban</div>
+                </div>
+
+                <h3>🟢 Inline elemek (inline)</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Csak annyit foglal el, amennyi a tartalma</li>
+                    <li>Ugyanabban a sorban helyezkedik el más elemek mellett</li>
+                    <li>Bal/jobb margin és padding működik, de TOP/BOTTOM nem!</li>
+                    <li>Width és height nem módosítható</li>
+                    <li><strong>Alapértelmezett html elemek:</strong> <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;img&gt;</code></li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>Vizuális demó - Inline elemek:</strong></p>
+                    <p>
+                        <span class="inline-example">📝 Inline1</span>
+                        <span class="inline-example">📝 Inline2</span>
+                        <span class="inline-example">📝 Inline3</span>
+                    </p>
+                </div>
+
+                <h3>🟡 Inline-Block</h3>
+                <p>Kombinálja a block és inline tulajdonságait:</p>
+                <ul>
+                    <li>Ugyanabban a sorban helyezkedik el, mint az inline</li>
+                    <li>DE: width, height, margin és padding mindegyike módosítható!</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>Vizuális demó - Inline-block elemek:</strong></p>
+                    <div>
+                        <div class="inline-block-example">Box 1</div>
+                        <div class="inline-block-example">Box 2</div>
+                        <div class="inline-block-example">Box 3</div>
+                    </div>
+                </div>
+
+                <div class="success">
+                    <strong>💡 Tanács:</strong> A modern CSS-ben inkább a <code>flexbox</code> vagy <code>grid</code> használatos az elrendezéshez, de az alapok megértése nagyon fontos!
+                </div>
+            </section>
+
+            <!-- DISPLAY CSS SECTION -->
+            <section>
+                <h2>2️⃣ Display CSS - Értékek</h2>
+
+                <div class="highlight">
+                    <strong>📌 A display tulajdonság határozza meg, hogy az elem hogyan jelenjen meg az oldalon.</strong>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Display érték</th>
+                            <th>Leírás</th>
+                            <th>Praktikus használat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>block</code></td>
+                            <td>Új sorban, teljes szélesség</td>
+                            <td>Fő tartalmak, bekezdések, fejlécek</td>
+                        </tr>
+                        <tr>
+                            <td><code>inline</code></td>
+                            <td>Ugyanabban a sorban, csak szükséges hely</td>
+                            <td>Szövegformázás (bold, italic)</td>
+                        </tr>
+                        <tr>
+                            <td><code>inline-block</code></td>
+                            <td>Inline szerű, de módosítható méret</td>
+                            <td>Gomb, ikon, kisebb dobok</td>
+                        </tr>
+                        <tr>
+                            <td><code>flex</code></td>
+                            <td>Rugalmas elrendezés (soron vagy oszlopban)</td>
+                            <td>Menü, gombok csoportja, elrendezés</td>
+                        </tr>
+                        <tr>
+                            <td><code>grid</code></td>
+                            <td>Rácsos elrendezés (sorok és oszlopok)</td>
+                            <td>Összetett elrendezés, galériák</td>
+                        </tr>
+                        <tr>
+                            <td><code>none</code></td>
+                            <td>Elem nem jelenik meg</td>
+                            <td>Elemek elrejtése</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="code-block">
+<span class="comment">/* Alapvető display értékek */</span><br>
+<span class="keyword">selector</span> {<br>
+&nbsp;&nbsp;<span class="property">display</span>: <span class="value">block</span>;<br>
+}
+                </div>
+            </section>
+
+            <!-- BOX MODEL SECTION -->
+            <section>
+                <h2>3️⃣ Box Modell - Alapvető koncepció</h2>
+
+                <p>Minden HTML elem egy "dobozból" áll, ami 4 részre osztható:</p>
+
+                <div class="demo-section">
+                    <p><strong>📦 Box Model szerkezet (kívülről befelé):</strong></p>
+                    <ol style="margin-left: 40px; margin-top: 15px;">
+                        <li><strong>Margin</strong> - A doboz körüli külső tér (gennyira van az elemtől)</li>
+                        <li><strong>Border</strong> - A doboz kerete</li>
+                        <li><strong>Padding</strong> - A tartalom körüli belső tér (a border és a tartalom között)</li>
+                        <li><strong>Content</strong> - A tényleges tartalom (szöveg, képek stb.)</li>
+                    </ol>
+                </div>
+
+                <h3>📏 Box-sizing értékek</h3>
+
+                <p><strong>1. content-box (alapértelmezett)</strong></p>
+                <div class="example-box">
+                    <p>Width és Height <strong>CSAK</strong> a tartalomra vonatkozik.</p>
+                    <p>A padding és border <strong>HOZZÁADÓDIK</strong> a szélességhez!</p>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-sizing</span>: <span class="value">content-box</span>;<br>
+&nbsp;&nbsp;<span class="property">width</span>: <span class="value">200px</span>;<br>
+&nbsp;&nbsp;<span class="property">padding</span>: <span class="value">20px</span>;<br>
+&nbsp;&nbsp;<span class="property">border</span>: <span class="value">5px solid black</span>;<br>
+}<br>
+<br>
+<span class="comment">/* Valódi szélesség = 200 + 20 + 20 + 5 + 5 = 250px */</span>
+                </div>
+
+                <p><strong>2. border-box</strong></p>
+                <div class="example-box">
+                    <p>Width és Height tartalmazza a paddingot és a bordert is!</p>
+                    <p>Ez a <strong>modern és ajánlott</strong> megoldás!</p>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-sizing</span>: <span class="value">border-box</span>;<br>
+&nbsp;&nbsp;<span class="property">width</span>: <span class="value">200px</span>;<br>
+&nbsp;&nbsp;<span class="property">padding</span>: <span class="value">20px</span>;<br>
+&nbsp;&nbsp;<span class="property">border</span>: <span class="value">5px solid black</span>;<br>
+}<br>
+<br>
+<span class="comment">/* Valódi szélesség = 200px (tartalmaz mindent) */</span>
+                </div>
+
+                <div class="success">
+                    <strong>✅ Ajánlás:</strong> Szinte mindig használj <code>box-sizing: border-box;</code> a * selectorral az oldal tetején!
+                    <div class="code-block" style="margin-top: 10px;">
+<span class="keyword">*</span> {<br>
+&nbsp;&nbsp;<span class="property">box-sizing</span>: <span class="value">border-box</span>;<br>
+}
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOX SHADOW SECTION -->
+            <section>
+                <h2>4️⃣ Box-shadow - Árnyék effektek</h2>
+
+                <p><strong>Szintaxis:</strong> <code>box-shadow: offset-x offset-y blur-radius spread-radius color inset;</code></p>
+
+                <h3>🎨 Box-shadow paraméterek</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paraméter</th>
+                            <th>Leírás</th>
+                            <th>Érték</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>offset-x</strong></td>
+                            <td>Árnyék jobbra eltolása</td>
+                            <td>Pozitív = jobbra, negatív = balra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>offset-y</strong></td>
+                            <td>Árnyék lefelé eltolása</td>
+                            <td>Pozitív = le, negatív = fel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>blur-radius</strong></td>
+                            <td>Árnyék elmosódottságának mértéke</td>
+                            <td>Nagyobb szám = többféle árnyék</td>
+                        </tr>
+                        <tr>
+                            <td><strong>spread-radius</strong></td>
+                            <td>Árnyék kiterjedésének nagysága</td>
+                            <td>Pozitív = nagyobb, negatív = kisebb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>color</strong></td>
+                            <td>Árnyék színe</td>
+                            <td>rgba(0,0,0,0.3) vagy #000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>inset</strong></td>
+                            <td>Belső árnyék a dobozban</td>
+                            <td>Opcionális kulcsszó</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📌 Box-shadow Praktikus Példák</h3>
+
+                <p><strong>1. Egyszerű árnyék (offset-x, offset-y, blur):</strong></p>
+                <div class="box-shadow-simple">
+                    ✨ 5px-es offset jobbra és le, 10px-es blur
+                </div>
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">5px 5px 10px rgba(0,0,0,0.3)</span>;<br>
+}
+                </div>
+
+                <p><strong>2. Blur effect - Fényes szín, elmosódott árnyék:</strong></p>
+                <div class="box-shadow-blur">
+                    💫 Elmosódott, kékes árnyék
+                </div>
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 0 20px rgba(102,126,234,0.6)</span>;<br>
+}
+                </div>
+
+                <p><strong>3. Spread effect - Kiterjesztett árnyék:</strong></p>
+                <div class="box-shadow-spread">
+                    📦 Kiterjesztett árnyék körülötte
+                </div>
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 0 0 10px rgba(102,126,234,0.3)</span>;<br>
+}
+                </div>
+
+                <p><strong>4. Inset - Belső árnyék:</strong></p>
+                <div class="box-shadow-inset">
+                    🔘 Belső árnyék a dobozban
+                </div>
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">inset 0 0 10px rgba(0,0,0,0.2)</span>;<br>
+}
+                </div>
+
+                <div class="highlight">
+                    <strong>💡 Tipp:</strong> Több árnyékot is lehet egymás után írni vesszővel elválasztva! <br>
+                    <code>box-shadow: 0 0 10px rgba(0,0,0,0.3), inset 0 0 5px rgba(0,0,0,0.1);</code>
+                </div>
+            </section>
+
+            <!-- POSITION SECTION -->
+            <section>
+                <h2>5️⃣ Position - Pozicionálás módok</h2>
+
+                <div class="highlight">
+                    <strong>📌 A position tulajdonság határozza meg, hogy az elem hogyan helyezkedik el az oldalon.</strong>
+                </div>
+
+                <h3>🔵 Static (alapértelmezett)</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Normális dokumentum folyamban helyezkedik el</li>
+                    <li>A top, bottom, left, right tulajdonságoknak <strong>nincs hatása</strong></li>
+                    <li>Ez a default érték minden elemnek</li>
+                </ul>
+
+                <div class="demo-section">
+                    <div class="position-static">
+                        📍 Static position - normális helyen
+                    </div>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">static</span>;<br>
+&nbsp;&nbsp;<span class="property">top</span>: <span class="value">100px</span>; <span class="comment">/* Ennek nincs hatása! */</span><br>
+}
+                </div>
+
+                <h3>🟡 Relative</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Az elem <strong>eredeti helyétől</strong> eltolható (top, bottom, left, right)</li>
+                    <li>Az eredeti hely <strong>foglalt marad</strong> (más elemek nem helyezkednek oda)</li>
+                    <li>Relatív pozicionálás = az elem saját pozíciójához viszonyított</li>
+                </ul>
+
+                <div class="demo-section">
+                    <p><strong>Normális elem:</strong></p>
+                    <div style="background: #28a745; color: white; padding: 15px; margin: 10px 0; border-radius: 5px; font-weight: bold;">
+                        📍 Normális elem - nem mozgatott
+                    </div>
+                    <p><strong>Relative element (20px jobbra, 10px le):</strong></p>
+                    <div class="position-relative">
+                        📍 Relative - eltolt az eredetitől
+                    </div>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">relative</span>;<br>
+&nbsp;&nbsp;<span class="property">left</span>: <span class="value">20px</span>;<br>
+&nbsp;&nbsp;<span class="property">top</span>: <span class="value">10px</span>;<br>
+}
+                </div>
+
+                <h3>🔴 Absolute</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Az elem <strong>kikerül</strong> a normális dokumentum folyamából</li>
+                    <li>Az eredeti hely <strong>felszabadul</strong> (más elemek oda helyezkednek)</li>
+                    <li>A <strong>legközelebbi pozícionált szülőhöz viszonyítva</strong> helyezkedik el</li>
+                    <li>Ha nincs pozícionált szülő, az oldal tetejétől számít</li>
+                </ul>
+
+                <div class="demo-section">
+                    <p><strong>Szülő elem (position: relative):</strong></p>
+                    <div class="position-container">
+                        <p>Ez a szülő elem</p>
+                        <div class="position-absolute">
+                            📍 Absolute - jobb felső sarok
+                        </div>
+                        <p>Ez maradt az eredeti helyen, mert az absolute elem kikerült az áramlásból</p>
+                    </div>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">szülő-div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">relative</span>;<br>
+}<br>
+<br>
+<span class="keyword">gyermek-div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">absolute</span>;<br>
+&nbsp;&nbsp;<span class="property">top</span>: <span class="value">10px</span>;<br>
+&nbsp;&nbsp;<span class="property">right</span>: <span class="value">10px</span>;<br>
+}
+                </div>
+
+                <h3>🟢 Fixed</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Az elem a <strong>viewport-hoz</strong> (a képernyőhöz) rögzítve marad</li>
+                    <li>Görgetéskor az elem <strong>nem mozdul el</strong></li>
+                    <li>Tökéletes: navigációs menü, lebegő gombok, stb.</li>
+                </ul>
+
+                <div class="warning">
+                    <strong>⚠️ Fixed position!</strong> Az alábbi elem a képernyő jobb alsó sarkában marad még akkor is, ha görgetsz.
+                </div>
+
+                <div class="position-fixed">
+                    📍 Fixed - görgetéskor mozdulatlan
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">fixed</span>;<br>
+&nbsp;&nbsp;<span class="property">bottom</span>: <span class="value">20px</span>;<br>
+&nbsp;&nbsp;<span class="property">right</span>: <span class="value">20px</span>;<br>
+&nbsp;&nbsp;<span class="property">z-index</span>: <span class="value">1000</span>; <span class="comment">/* Hogy felül legyen */</span><br>
+}
+                </div>
+
+                <h3>🔵 Sticky</h3>
+                <p><strong>Jellemzői:</strong></p>
+                <ul>
+                    <li>Kezdetben <strong>static-ként</strong> viselkedik</li>
+                    <li>Görgetéskor, amikor eléri a megadott pozíciót, <strong>fixed</strong> lesz</li>
+                    <li>Szülő elemhez van kötve (nem az egész viewport-hoz)</li>
+                </ul>
+
+                <div class="demo-section">
+                    <div class="position-sticky">
+                        📍 Sticky - marad a tetején, amikor görgetsz
+                    </div>
+                    <p style="margin-top: 20px;">Ez az elem marad a tetején, amikor görgetsz. Próbáld ki!</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+
+                <div class="code-block">
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">sticky</span>;<br>
+&nbsp;&nbsp;<span class="property">top</span>: <span class="value">0</span>; <span class="comment">/* Mettől legyen sticky */</span><br>
+}
+                </div>
+            </section>
+
+            <!-- COMPARISON TABLE SECTION -->
+            <section>
+                <h2>6️⃣ Position Értékek Összehasonlítása</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Normális áramlás</th>
+                            <th>top/bottom/left/right</th>
+                            <th>Viszonyítva</th>
+                            <th>Például</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>static</code></td>
+                            <td>✅ Igen</td>
+                            <td>❌ Nincs hatás</td>
+                            <td>—</td>
+                            <td>Normális elem</td>
+                        </tr>
+                        <tr>
+                            <td><code>relative</code></td>
+                            <td>✅ Igen</td>
+                            <td>✅ Igen</td>
+                            <td>Eredeti helye</td>
+                            <td>Elem eltolása</td>
+                        </tr>
+                        <tr>
+                            <td><code>absolute</code></td>
+                            <td>❌ Nem</td>
+                            <td>✅ Igen</td>
+                            <td>Szülő elem</td>
+                            <td>Modal, tooltip</td>
+                        </tr>
+                        <tr>
+                            <td><code>fixed</code></td>
+                            <td>❌ Nem</td>
+                            <td>✅ Igen</td>
+                            <td>Viewport (képernyő)</td>
+                            <td>Lebegő gomb, navbar</td>
+                        </tr>
+                        <tr>
+                            <td><code>sticky</code></td>
+                            <td>✅ Kezdetben</td>
+                            <td>✅ Igen</td>
+                            <td>Szülő elem</td>
+                            <td>Rögzített fejléc</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- TOP/BOTTOM/LEFT/RIGHT SECTION -->
+            <section>
+                <h2>7️⃣ Top / Bottom / Left / Right - Pontos Pozícionálás</h2>
+
+                <p>Ezek a tulajdonságok csak akkor működnek, ha az elem <strong>nem static</strong> pozícióban van!</p>
+
+                <h3>📏 Hogyan működik?</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tulajdonság</th>
+                            <th>Leírás</th>
+                            <th>Pozitív érték</th>
+                            <th>Negatív érték</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>top</code></td>
+                            <td>Felülről való távolság</td>
+                            <td>Lefelé tolódik</td>
+                            <td>Felfelé tolódik</td>
+                        </tr>
+                        <tr>
+                            <td><code>bottom</code></td>
+                            <td>Alulról való távolság</td>
+                            <td>Felfelé tolódik</td>
+                            <td>Lefelé tolódik</td>
+                        </tr>
+                        <tr>
+                            <td><code>left</code></td>
+                            <td>Balról való távolság</td>
+                            <td>Jobbra tolódik</td>
+                            <td>Balra tolódik</td>
+                        </tr>
+                        <tr>
+                            <td><code>right</code></td>
+                            <td>Jobbról való távolság</td>
+                            <td>Balra tolódik</td>
+                            <td>Jobbra tolódik</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="code-block">
+<span class="comment">/* Praktikus példa: Absolute elem a jobb felső sarokba */</span><br>
+<span class="keyword">div</span> {<br>
+&nbsp;&nbsp;<span class="property">position</span>: <span class="value">absolute</span>;<br>
+&nbsp;&nbsp;<span class="property">top</span>: <span class="value">10px</span>; <span class="comment">/* 10px a felülről */</span><br>
+&nbsp;&nbsp;<span class="property">right</span>: <span class="value">10px</span>; <span class="comment">/* 10px a jobbról */</span><br>
+}
+                </div>
+            </section>
+
+            <!-- ÖSSZEFOGLALÁS -->
+            <section>
+                <h2>📝 Összefoglalás - Vizsga Tipp</h2>
+
+                <div class="highlight">
+                    <h3 style="margin-top: 0;">Legfontosabb fogalmak</h3>
+                    <ul style="margin-left: 30px;">
+                        <li><strong>Block:</strong> Teljes szélesség, új sor</li>
+                        <li><strong>Inline:</strong> Csak szükséges hely, ugyanabban a sorban</li>
+                        <li><strong>Inline-block:</strong> Inline + módosítható méret</li>
+                        <li><strong>box-sizing:</strong> border-box használj!</li>
+                        <li><strong>box-shadow:</strong> offset-x, offset-y, blur, spread, color, inset</li>
+                        <li><strong>Position static:</strong> Alapértelmezett, nincs eltolás</li>
+                        <li><strong>Position relative:</strong> Eredeti helyétől eltolható</li>
+                        <li><strong>Position absolute:</strong> Szülőhöz viszonyítva, kikerül az áramlásból</li>
+                        <li><strong>Position fixed:</strong> Viewport-hoz rögzítve</li>
+                        <li><strong>Position sticky:</strong> Static → Fixed görgetéskor</li>
+                    </ul>
+                </div>
+
+                <div class="success">
+                    <h3 style="margin-top: 0;">🎯 Vizsga Tippek</h3>
+                    <ul style="margin-left: 30px;">
+                        <li>Készítsd elő a <code>* { box-sizing: border-box; }</code> snippet-et</li>
+                        <li>Rajzolj fel papírra a box modellt (content, padding, border, margin)</li>
+                        <li>Gyakorolj position értékeket: absolute vs fixed megkülönböztetés nagyon fontos!</li>
+                        <li>Box-shadow: ne felejtsd el a szintaxist (offset-x, offset-y, blur, spread, color)</li>
+                        <li>Block vs inline: gyorsan felismerni és alkalmazni</li>
+                        <li>Készítsd elő egy referencia HTML fájlt ezekkel a példákkal</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Gyakori hibák:</strong>
+                    <ul style="margin-left: 30px;">
+                        <li>❌ Absolute position-t szülő element nélkül → a viewport-hoz viszonyít</li>
+                        <li>❌ Inline elemre width/height alkalmazása → nincs hatása</li>
+                        <li>❌ top/bottom/left/right static position-nél → nincs hatása</li>
+                        <li>❌ box-shadow szintaxis rossz → nem működik</li>
+                        <li>❌ Padding-t kívülre számolni (content-box módban) → rossz méret jön ki</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>💪 Sok sikert a vizsgaanyaggal! - Magyarázó HTML/CSS 2026 🎓</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Ez a dokszám megérthető referencia a CSS alapjaihoz. Használd fel a vizsgára!</p>
+        </footer>
+    </div>
+</body>
+</html>

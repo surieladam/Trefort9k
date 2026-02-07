@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Vizsga - Kérdés 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { color: #2c3e50; }
+        .kerdes { background-color: #ecf0f1; padding: 15px; border-radius: 5px; }
+        .valasz { background-color: #d5f4e6; padding: 15px; margin-top: 15px; border-radius: 5px; display: none; }
+        button { 
+            background-color: #3498db; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #2980b9; }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Vizsga - Kérdés 3</h1>
+        
+        <div class="kerdes">
+            <h2>Kérdés:</h2>
+            <p>Hogyan működnek a belső ugrólinkek HTML-ben? Mutass be egy példát az <code>id</code> attribútum és az <code>&lt;a href="#id"&gt;</code> link használatával!</p>
+        </div>
+        <button onclick="toggleAnswer()">Mutasd a Választ</button>
+        <div class="valasz" id="answer">
+            <h3>Válasz:</h3>
+            <p><b>A belső ugrólinkek szintaxisa:</b></p>
+            <ul>
+                <li>Az elemhez egy egyedi <code>id</code> attribútumot adsz: <code>&lt;h2 id="fejezet-1"&gt;Fejezet 1&lt;/h2&gt;</code></li>
+                <li>Egy linken keresztül erre ugrasz: <code>&lt;a href="#fejezet-1"&gt;Menj a Fejezet 1-hez&lt;/a&gt;</code></li>
+                <li>A <code>#</code> jel jelzi, hogy ez egy belső link (anchor)</li>
+            </ul>
+            <p><b>Teljes példa:</b></p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Belső Ugrólinkek&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Tartalomjegyzék&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#fejezet-1"&gt;Fejezet 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#fejezet-2"&gt;Fejezet 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="fejezet-1"&gt;Fejezet 1&lt;/h2&gt;
+&lt;p&gt;Ez az első fejezet szövege...&lt;/p&gt;
+&lt;h2 id="fejezet-2"&gt;Fejezet 2&lt;/h2&gt;
+&lt;p&gt;Ez a második fejezet szövege...&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p><b>Fontosabb szabályok:</b></p>
+            <ul>
+                <li>Az <code>id</code> egyedi kell, hogy legyen az oldalon (ne legyen két azonos id)</li>
+                <li>Az <code>id</code>-ben általában kisbetűt és kötőjelet használunk</li>
+                <li>Az <code>href="#"</code> után azonnal jön az id neve kötőjel nélkül</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function toggleAnswer() {
+            const answer = document.getElementById('answer');
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
