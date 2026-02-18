@@ -1,0 +1,13 @@
+div {
+    background-color: red;
+    /*width: 300px;  Itt működik, mivel block elem */
+    display: inline; /* Így már erre nem működik */
+    display: inline-block; /* inline elemként viselkedik, de változtatható a mérete*/
+}
+
+span {
+    background-color: blue;
+    width: 300px; /* Itt nem működik, mivel inline elem */
+    display: block; /* Így már erre is alkalmazható */
+    display: inline-block; /* inline elemként viselkedik, de változtatható a mérete*/
+}
