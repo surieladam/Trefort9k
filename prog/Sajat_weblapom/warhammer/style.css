@@ -2,8 +2,10 @@ body{
     margin:0;
     font-family: Arial, sans-serif;
     background:#111;
-    color:white;
+    color:#ffffff;
     text-align: center;
+    padding: 20px;
+    font-size: 1rem;
 }
 
 header{
@@ -14,9 +16,9 @@ header{
 }
 
 nav {
-    background:darkgray;
+    background:#a9a9a9;
     padding:10px;
-    color:black;
+    color:#000000;
     text-align: center;
 }
 
@@ -27,38 +29,46 @@ nav ul {
     display:flex;
     justify-content: center;
 }
+
 nav a{
-    color: black;
+    color:#000000;
     text-decoration: none;
     padding: 5px 15px;
-    background-color: grey;
+    background-color:#808080;
     border-radius: 10px;
 }
 
 aside{
-    float: left;    
     width:20%;
     background:#222;
     padding:15px;
     margin:20px auto; 
     border-radius:8px;
-    border: 1px solid lightgray;
+    border: 1px solid #d3d3d3;
+    display:inline-block;
+    vertical-align: top;
 }
-
 main{
-    padding:20px;
-    background:#1a1a1a;
-    margin:20px auto;
-    max-width:1100px;
-}
+    padding: 30px;
+    background: #1a1a1a;
+    margin: 30px 20px;
+    border-radius: 12px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px #222;
+    font-size: 1rem;
+    display:inline-block;
+    width:75%;
+    vertical-align: top;
+    font-size: 1rem;
+}  
 
 section{
     background:#222;
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
 }
-
 
 #Wlogo img{ 
     width:400px;
@@ -72,10 +82,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    margin-bottom: 20px;
     display: inline-block;
+    border: 2px solid #555;
+    border-radius: 8px;
+    background: #181818;
 }
-.lore-table-img {
-    width: 800px;
+
+#lore_table img {
+    width: 140px;
     height: auto;
     border-radius: 8px;
 }
@@ -85,11 +100,13 @@ th {
     padding: 12px;
     border: 1px solid #555;
     color: #ff4444;
+    border-bottom: 2px solid #ff4444;
 }
 
 td {
     padding: 10px;
     border: 1px solid #333;
+    background: #222;
 }
 
 footer{
@@ -99,3 +116,6 @@ footer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#fooldalarticles h3{
+    font-size: 2rem;
+}
