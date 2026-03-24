@@ -7,33 +7,24 @@
     </head>
     <body>
         <h1>Hogyan működnek a CSS class-ok?</h1>
+        <section class="note">
+            <p>Class használat: egy CSS szabálycsoportot egyszerre több elemre alkalmazunk. <strong>class="classattributum"</strong> és <strong>class="fontos"</strong> a kinézetet csoportosan változtatja, az HTML építése közben olvasható marad.</p>
+        </section>
+            <h2>Mi történik akkor, ha egy elem nem kap class attribútumot?</h2>
             <section>
-                <h2>Mi történik akkor, ha egy elem nem kap class attribútumot?</h2>
                 <p>Ez a szöveg nem rendelkezik class attribútummal. A megjelenése kizárólag az alapértelmezett, illetve a HTML taghez tartozó CSS szabályoktól függ. Ilyenkor minden ilyen elem ugyanolyan kinézetű lesz.</p>
             </section>
+            <h2>Mi történik akkor, ha egy elem kap class attribútumot?</h2>
             <section class="classattributum">
-                <h2>Mi a szerepe a class attribútumnak?</h2>
                 <p>Ez a szöveg már tartalmaz class attribútumot. A class segítségével több HTML elemet tudunk egy csoportba sorolni. Ha később CSS-ben erre a class-ra hivatkozunk, minden ilyen elem egyszerre fog megváltozni.</p>
             </section>
             <section class="classattributum">
                 <p>Ez egy másik szöveg, amely ugyanazt a class attribútumot használja. Emiatt a két elem megjelenése megegyezik, még akkor is, ha a tartalmuk eltérő.</p>
             </section>
+            <h2>Miért fontos a class használata?</h2>
             <section class="fontos">
                 <h2>Miért fontos a class használata?</h2>
                 <p>A class segítségével elkerülhető, hogy minden elemet külön-külön kelljen formázni. Ezt akkor használjuk, ha ugyanazt a formázást többször is alkalmazni szeretnénk az oldalon, így átláthatóbb kódot kapunk.</p>
-            </section>
-            <h1>Hogyan működnek a CSS id-k?</h1>
-            <section id="bevezeto">
-                <h2>Bevezető rész</h2>
-                <p>Ez a section egy bevezető rész. Az id segítségével külön tudjuk kezelni, mert ez a rész más szerepet tölt be.</p>
-            </section>
-            <section id="tartalom">
-                <h2>Fő tartalom</h2>
-                <p>Ez a section a fő tartalmat tartalmazza. Az id egyedi, ezért pontosan ezt a részt tudjuk megcélozni CSS-ben.</p>
-            </section>
-            <section id="figyelem">
-                <h2>Figyelemfelhívó rész</h2>
-                <p>Ez egy figyelemfelhívó rész. Az id azért jó itt, mert csak EZT az egy elemet szeretnénk hangsúlyosabbá tenni.</p>
             </section>
     </body>
 </html>
